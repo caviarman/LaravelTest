@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Game;
+use App\Log;
 
 class GameController extends Controller
 {
@@ -34,6 +35,7 @@ class GameController extends Controller
             'description' => $description,
             'rightAnswer' => $rightAnswer,
             'gameId' => $game->id,
+            'logs' => Log::all()->where('gameId', $game->id)->where('userId', auth()->user()->id)->toArray(),
         ]);
     }
 }

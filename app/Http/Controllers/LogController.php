@@ -42,7 +42,9 @@ class LogController extends Controller
         $log->userAnswer = $request->userAnswer;
         $log->rightAnswer = $request->rightAnswer;
         $log->save();
-        return redirect()->route('game.run', ['id' => $request->gameId]);
+        return redirect()->route('game.run', [
+            'id' => $request->gameId,
+            ]);
     }
 
     /**

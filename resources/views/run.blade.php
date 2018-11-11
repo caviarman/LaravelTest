@@ -24,4 +24,28 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+    @if ($logs ?? null)
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Question</th>
+      <th scope="col">Your answer</th>
+      <th scope="col">Right answer</th>
+      <th scope="col">Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($logs as $log)
+    <tr>
+      <th scope="row">{{ $log['id'] }}</th>
+      <td>{{ $log['question'] }}</td>
+      <td>{{ $log['userAnswer'] }}</td>
+      <td>{{ $log['rightAnswer'] }}</td>
+      <td>{{ $log['created_at'] }}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+    @endif
 @endsection
