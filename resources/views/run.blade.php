@@ -21,10 +21,23 @@
                 <input type="hidden" name="gameId" class="form-control" id="gameid" value="{{ $gameId }}">
                 <input type="hidden" name="userId" class="form-control" id="userid" value="{{ \Auth::user()->id }}">
             </div>
+            <div class="form-group">
+                @if (session()->has('success'))
+                    <div class="alert alert-success" role="alert">
+                        <strong>{{ session()->get('success') }}</strong>
+                    </div>
+                @endif
+                @if (session()->has('error'))
+                    <div class="alert alert-danger" role="alert">
+                        <strong>{{ session()->get('error') }}</strong>
+                    </div>
+                
+                @endif
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-<br>
     </div>
+    <br>
     @if ($logs ?? null)
     <table class="table table-striped">
   <thead>

@@ -9,8 +9,8 @@ class Progression
     public function getData()
     {
         $index = rand(0, $this->size - 1);
-        $start = rand(1, 100);
-        $step = rand(1, 100);
+        $start = rand(1, 10);
+        $step = rand(1, 10);
         $arr = [];
         for ($i = 0; $i < $this->size; $i += 1) {
             $arr[$i] = $start + ($step * $i);

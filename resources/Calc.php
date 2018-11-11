@@ -9,8 +9,8 @@ class Calc
     public function getData()
     {
         $index = rand(0, 2);
-        $firstNum = rand(1, 100);
-        $secondNum = rand(1, 100);
+        $firstNum = rand(1, 20);
+        $secondNum = rand(1, 20);
         switch ($this->operators[$index]) {
             case '+':
                 $question = ("{$firstNum} + {$secondNum}");

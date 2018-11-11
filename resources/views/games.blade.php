@@ -3,7 +3,9 @@
 @section('content')
 <div class="container">
     @foreach ($games as $game)
-        <p>Start <a href="{{ route('game.run', ['id' => $game->id]) }}">{{ $game->name }}</a> game</p>
+        <p>
+            <a class="btn btn-secondary" href="{{ route('game.run', ['id' => $game->id]) }}" role="button">{{ $game->name }}</a>
+        </p>
     @endforeach
 </div>
 @endsection

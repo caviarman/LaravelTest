@@ -33,12 +33,19 @@ class GameController extends Controller
             'description' => $description,
             'answer' => $rightAnswer,
         ] = $run->getData();
-        return view('run', [
+        return view(
+            'run', [
             'question' => $question,
             'description' => $description,
             'rightAnswer' => $rightAnswer,
             'gameId' => $game->id,
-            'logs' => Log::all()->where('gameId', $game->id)->where('userId', auth()->user()->id)->toArray(),
-        ]);
+            'logs' => array_reverse(
+                Log::all()
+                    ->where('gameId', $game->id)
+                    ->where('userId', auth()->user()->id)
+                    ->toArray()
+            ),
+            ]
+        );
     }
 }
