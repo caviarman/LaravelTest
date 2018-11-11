@@ -16,7 +16,7 @@ class Even
         return [
             'question' => $question,
             'answer' => $answer,
-            'description' => 'Answer "yes" if number even otherwise answer "no".'
+            'description' => 'Answer "yes" if number is even otherwise answer "no".'
         ];
     }
 }
