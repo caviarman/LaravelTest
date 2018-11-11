@@ -7,6 +7,10 @@ use App\Game;
 
 class GameController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function show(Game $games)
     {
         return view('games', ['games' => $games->all()]);
@@ -29,11 +33,7 @@ class GameController extends Controller
             'question' => $question,
             'description' => $description,
             'rightAnswer' => $rightAnswer,
-            'id'=> $game->id,
+            'gameId' => $game->id,
         ]);
-    }
-    public function log(Request $request)
-    {
-        return $request->all();
     }
 }

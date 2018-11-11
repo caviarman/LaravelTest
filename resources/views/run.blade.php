@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form method="POST" action="{{ route('log', ['id' => $id]) }}">
+        <form method="POST" action="{{ route('log.store') }}">
             @csrf
             <div class="form-group">
                 <label for="description">Description</label>
@@ -18,12 +18,10 @@
             </div>
             <div class="form-group">
                 <input type="hidden" name="rightAnswer" class="form-control" id="rightAnswer" value="{{ $rightAnswer }}">
-                <input type="hidden" name="id" class="form-control" id="id" value="{{ $id }}">
+                <input type="hidden" name="gameId" class="form-control" id="gameid" value="{{ $gameId }}">
+                <input type="hidden" name="userId" class="form-control" id="userid" value="{{ \Auth::user()->id }}">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    @if
-    
-    @endif
 @endsection
