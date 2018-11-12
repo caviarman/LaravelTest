@@ -42,8 +42,8 @@ class GameController extends Controller
                 'rightAnswer' => $rightAnswer,
                 'gameId' => $game->id,
                 'logs' => DB::table('logs')
-                    ->where('userID', '=', auth()->user()->id)
-                    ->where('gameID', '=', $game->id)
+                    ->where('userId', '=', auth()->user()->id)
+                    ->where('gameId', '=', $game->id)
                     ->orderBy('id', 'desc')
                     ->paginate(10),
             ]
