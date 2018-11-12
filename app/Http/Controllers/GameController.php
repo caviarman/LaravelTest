@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Game;
 use App\Log;
 
@@ -39,12 +40,11 @@ class GameController extends Controller
             'description' => $description,
             'rightAnswer' => $rightAnswer,
             'gameId' => $game->id,
-            'logs' => array_reverse(
-                Log::all()
-                    ->where('gameId', $game->id)
-                    ->where('userId', auth()->user()->id)
-                    ->toArray()
-            ),
+            'logs' => DB::table('logs')
+                ->where('userID', '=', auth()->user()->id)
+                ->where('gameID', '=', $game->id)
+                ->orderBy('id', 'desc')
+                ->paginate(5),
             ]
         );
     }

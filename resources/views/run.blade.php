@@ -52,11 +52,11 @@
   <tbody>
     @foreach ($logs as $log)
     <tr>
-      <th scope="row">{{ $log['id'] }}</th>
-      <td>{{ $log['question'] }}</td>
-      <td>{{ $log['userAnswer'] }}</td>
-      <td>{{ $log['rightAnswer'] }}</td>
-      <td>{{ $log['created_at'] }}</td>
+      <th scope="row">{{ $log->id }}</th>
+      <td>{{ $log->question }}</td>
+      <td>{{ $log->userAnswer }}</td>
+      <td>{{ $log->rightAnswer }}</td>
+      <td>{{ $log->created_at }}</td>
     </tr>
     @endforeach
   </tbody>
