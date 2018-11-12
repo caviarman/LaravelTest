@@ -61,5 +61,6 @@
     @endforeach
   </tbody>
 </table>
+{{ $logs->links() }}
     @endif
 @endsection

@@ -44,7 +44,7 @@ class GameController extends Controller
                 ->where('userID', '=', auth()->user()->id)
                 ->where('gameID', '=', $game->id)
                 ->orderBy('id', 'desc')
-                ->paginate(5),
+                ->paginate(10),
             ]
         );
     }
