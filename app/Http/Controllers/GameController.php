@@ -35,16 +35,17 @@ class GameController extends Controller
             'answer' => $rightAnswer,
         ] = $run->getData();
         return view(
-            'run', [
-            'question' => $question,
-            'description' => $description,
-            'rightAnswer' => $rightAnswer,
-            'gameId' => $game->id,
-            'logs' => DB::table('logs')
-                ->where('userID', '=', auth()->user()->id)
-                ->where('gameID', '=', $game->id)
-                ->orderBy('id', 'desc')
-                ->paginate(10),
+            'run',
+            [
+                'question' => $question,
+                'description' => $description,
+                'rightAnswer' => $rightAnswer,
+                'gameId' => $game->id,
+                'logs' => DB::table('logs')
+                    ->where('userID', '=', auth()->user()->id)
+                    ->where('gameID', '=', $game->id)
+                    ->orderBy('id', 'desc')
+                    ->paginate(10),
             ]
         );
     }
