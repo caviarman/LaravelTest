@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/games', 'GameController@show')->name('games.show');
-Route::get('/games/{id}', 'GameController@run')->name('game.run');
-Route::post('/games', 'LogController@store')->name('log.store');
+Route::get('/games', 'GameController@index')->name('games.show');
+Route::get('/games/new', 'GameController@create')->name('games.new');
+Route::post('/games', 'GameController@store')->name('games.store');
+Route::get('/games/{id}/run', 'GameController@run')->name('game.run');
+Route::post('/logs', 'LogController@store')->name('log.store');
 Route::get('/users', 'UserController@index')->name('users.show');

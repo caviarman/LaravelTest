@@ -13,9 +13,21 @@ class GameController extends Controller
     {
         $this->middleware('auth');
     }
-    public function show(Game $games)
+    public function index()
     {
-        return view('games', ['games' => $games->all()]);
+        return view('games', ['games' => Game::all()]);
+    }
+    public function create()
+    {
+        return view('newgame');
+    }
+    public function store(Request $request)
+    {
+        $game = new Game();
+        $game->name = $request->name;
+        $game->description = $request->description;
+        $game->save();
+        return redirect()->route('games.show');
     }
     public function run($id)
     {
@@ -33,17 +45,13 @@ class GameController extends Controller
             $run = new \Resources\Balance();
         }
         [
-            'question' => $question,
-            'description' => $description,
-            'answer' => $rightAnswer,
+            'question' => $game->question,
+            'answer' => $game->rightAnswer,
         ] = $run->getData();
         return view(
             'run',
             [
-                'question' => $question,
-                'description' => $description,
-                'rightAnswer' => $rightAnswer,
-                'gameId' => $game->id,
+                'game' => $game,
                 'logs' => DB::table('logs')
                     ->where('userId', '=', auth()->user()->id)
                     ->where('gameId', '=', $game->id)
