@@ -41,14 +41,17 @@ class LogController extends Controller
         $log->question = $request->question;
         $log->userAnswer = $request->userAnswer;
         $log->rightAnswer = $request->rightAnswer;
-        $log->save();
-
+        $log->points = (int)$request->points;
+        
         if ($request->userAnswer === $request->rightAnswer) {
             session()->flash('success', 'Well done!');
         } else {
+            $log->points = 0;
             session()->flash('error', 'Oops! Error! Try again');
         }
-        
+
+        $log->save();
+
         return redirect()->route(
             'game.run',
             [

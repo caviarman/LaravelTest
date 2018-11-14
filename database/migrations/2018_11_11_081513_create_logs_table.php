@@ -20,6 +20,7 @@ class CreateLogsTable extends Migration
             $table->string('question');
             $table->string('userAnswer');
             $table->string('rightAnswer');
+            $table->unsignedInteger('points');
             $table->timestamps();
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('gameId')->references('id')->on('games')->onDelete('cascade');

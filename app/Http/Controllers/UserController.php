@@ -18,10 +18,12 @@ class UserController extends Controller
     {
         $users = DB::table('users')->get();
         foreach ($users as $user) {
-            $playedGames = DB::table('logs')
+            $user->count = DB::table('logs')
                 ->where('userId', '=', $user->id)
                 ->count();
-            $user->count = $playedGames;
+            $user->points = DB::table('logs')
+                ->where('userId', '=', $user->id)
+                ->sum('points');
         }
         return view('users', ['users' => $users]);
     }
