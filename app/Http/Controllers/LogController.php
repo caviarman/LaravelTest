@@ -50,7 +50,8 @@ class LogController extends Controller
         }
         
         return redirect()->route(
-            'game.run', [
+            'game.run',
+            [
                 'id' => $request->gameId,
             ]
         );

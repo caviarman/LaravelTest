@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+   
     <div class="container">
-        <form method="POST" action="{{ route('log.store') }}">
+        <form method="POST" id="game" action="{{ route('log.store') }}">
             @csrf
+            <div class="form-group">
+                <label for="timer">Timer</label>
+                <p class="form-control" name="timer" id="timer" readonly>15</p>
+            </div>
             <div class="form-group">
                 <label for="description">Description</label>
                 <input type="text" name="description" class="form-control" id="description" value="{{ $description }}" readonly>
@@ -34,33 +39,53 @@
                 
                 @endif
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     <br>
     @if ($logs ?? null)
-    <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Question</th>
-      <th scope="col">Your answer</th>
-      <th scope="col">Right answer</th>
-      <th scope="col">Created</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach ($logs as $log)
-    <tr>
-      <th scope="row">{{ $log->id }}</th>
-      <td>{{ $log->question }}</td>
-      <td>{{ $log->userAnswer }}</td>
-      <td>{{ $log->rightAnswer }}</td>
-      <td>{{ $log->created_at }}</td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
-{{ $logs->links() }}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Question</th>
+                <th scope="col">Your answer</th>
+                <th scope="col">Right answer</th>
+                <th scope="col">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($logs as $log)
+                <tr>
+                <th scope="row">{{ $log->id }}</th>
+                <td>{{ $log->question }}</td>
+                <td>{{ $log->userAnswer }}</td>
+                <td>{{ $log->rightAnswer }}</td>
+                <td>{{ $log->created_at }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        {{ $logs->links() }}
     @endif
+    <script type="text/javascript">
+	function timer() {
+        const obj = document.getElementById('timer');
+        obj.innerHTML--;
+        if (obj.innerHTML < 6) {
+            obj.style.color = "red";
+            obj.style.fontSize = "19px"; 
+        }
+        if (obj.innerHTML == 0) {
+            document.getElementById("userAnswer").readOnly = true;
+            document.getElementById("submit").style.visibility = "hidden";
+            alert("Time is up! Try again");
+        }
+        else 
+        {
+            setTimeout(timer, 1000);
+        }
+    }
+	setTimeout(timer, 1000);
+	</script>
 @endsection
