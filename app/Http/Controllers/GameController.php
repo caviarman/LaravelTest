@@ -29,6 +29,9 @@ class GameController extends Controller
         if ($game->name === 'Calc') {
             $run = new \Resources\Calc();
         }
+        if ($game->name === 'Balance') {
+            $run = new \Resources\Balance();
+        }
         [
             'question' => $question,
             'description' => $description,
