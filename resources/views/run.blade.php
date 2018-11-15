@@ -7,7 +7,7 @@
             @csrf
             <div class="form-group">
                 <label for="timer">Timer</label>
-                <p class="form-control" name="timer" id="timer" readonly>15</p>
+                <p class="form-control" name="timer" id="timer" readonly>30</p>
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
@@ -77,9 +77,9 @@
         const obj = document.getElementById('timer');
         document.getElementById("points").value = obj.innerHTML;
         obj.innerHTML--;
-        if (obj.innerHTML < 6) {
+        if (obj.innerHTML < 11) {
             obj.style.color = "red";
-            obj.style.fontSize = "19px"; 
+            //obj.style.fontSize = "19px"; 
         }
         if (obj.innerHTML == 0) {
             document.getElementById("userAnswer").readOnly = true;
