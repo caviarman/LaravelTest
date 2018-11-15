@@ -39,7 +39,7 @@ class Balance
         return [
             'question' => $question,
             'answer' => $answer,
-            'description' => 'Balance the given number.',
+            'description' => 'Balance the given number. (for ex.: number 489 is equal to balanced number 777)',
         ];
     }
 }
