@@ -43,7 +43,7 @@ class LogController extends Controller
         $log->rightAnswer = $request->rightAnswer;
         $log->points = (int)$request->points;
         
-        if ($request->userAnswer === $request->rightAnswer) {
+        if (mb_strtolower($request->userAnswer) === $request->rightAnswer) {
             session()->flash('success', 'Well done!');
         } else {
             $log->points = 0;
