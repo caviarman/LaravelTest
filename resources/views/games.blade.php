@@ -23,11 +23,11 @@
 </tbody>
 </div>
 @if (\Auth::user()->id == 1)
-<div class="container">
-    <p>
-        <a class="btn btn-secondary" href="{{ route('games.new') }}" role="button">Create</a>
-    </p>
-</div>
+    <div class="container">
+        <p>
+            <a class="btn btn-secondary" href="{{ route('games.new') }}" role="button">Create</a>
+        </p>
+    </div>
 @endif
 @endsection
     

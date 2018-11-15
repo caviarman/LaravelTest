@@ -44,6 +44,12 @@ class GameController extends Controller
         if ($game->name === 'Balance') {
             $run = new \Resources\Balance();
         }
+        if ($game->name === 'Gcd') {
+            $run = new \Resources\Gcd();
+        }
+        if ($game->name === 'Prime') {
+            $run = new \Resources\Prime();
+        }
         [
             'question' => $game->question,
             'answer' => $game->rightAnswer,
