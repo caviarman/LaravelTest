@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LogController extends Controller
 {
@@ -14,7 +15,21 @@ class LogController extends Controller
      */
     public function index()
     {
-        //
+        $logs = DB::table('games')
+            ->join('logs', 'games.id', '=', 'logs.gameId')
+            ->select(
+                'logs.id', 
+                'games.name', 
+                'logs.question', 
+                'logs.userAnswer', 
+                'logs.rightAnswer', 
+                'logs.points', 
+                'logs.created_at'
+            )
+            ->where('userId', '=', auth()->user()->id)
+            ->paginate(10);
+
+        return view('logs', ['logs' => $logs]);
     }
 
     /**

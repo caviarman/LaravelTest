@@ -23,4 +23,5 @@ Route::get('/games/new', 'GameController@create')->name('games.new');
 Route::post('/games', 'GameController@store')->name('games.store');
 Route::get('/games/{id}/run', 'GameController@run')->name('game.run');
 Route::post('/logs', 'LogController@store')->name('log.store');
+Route::get('/logs', 'LogController@index')->name('log.show');
 Route::get('/users', 'UserController@index')->name('users.show');
