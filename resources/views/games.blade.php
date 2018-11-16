@@ -10,17 +10,18 @@
             <th scope="col">Description</th>
             <th scope="col">Action</th>
         </tr>
-            </thead>
-        <tbody>
-            @foreach ($games as $game)
-                <tr>
-                    <th scope="row">{{ $game->id }}</th>
-                    <td>{{ $game->name }}</td>
-                    <td>{{ $game->description }}</td>
-                    <td><a class="btn btn-secondary" href="{{ route('game.run', ['id' => $game->id]) }}" role="button">Start</a></td>
-                </tr>
-            @endforeach
-</tbody>
+    </thead>
+    <tbody>
+        @foreach ($games as $game)
+            <tr>
+                <th scope="row">{{ $game->id }}</th>
+                <td>{{ $game->name }}</td>
+                <td>{{ $game->description }}</td>
+                <td><a class="btn btn-secondary" href="{{ route('game.run', ['id' => $game->id]) }}" role="button">Start</a></td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
 </div>
 @if (\Auth::user()->id == 1)
     <div class="container">
