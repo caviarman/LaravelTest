@@ -6,12 +6,12 @@
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">Game</th>
-                <th scope="col">Question</th>
-                <th scope="col">Your answer</th>
-                <th scope="col">Right answer</th>
-                <th scope="col">Points</th>
-                <th scope="col">Created</th>
+                <th scope="col">@lang('messages.game')</th>
+                <th scope="col">@lang('messages.question')</th>
+                <th scope="col">@lang('messages.userAnswer')</th>
+                <th scope="col">@lang('messages.rightAnswer')</th>
+                <th scope="col">@lang('messages.points')</th>
+                <th scope="col">@lang('messages.date')</th>
                 </tr>
             </thead>
             <tbody>

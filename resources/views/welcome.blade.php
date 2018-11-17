@@ -81,12 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                {{ config('app.name', 'Laravel') }}
+                    @lang('messages.title')
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('games.show') }}">Menu</a>
-                    <a href="{{ route('users.show') }}">Users</a>
+                    <a href="{{ route('games.show') }}">@lang('messages.menu')</a>
+                    <a href="{{ route('users.show') }}">@lang('messages.users')</a>
                     
                 </div>
             </div>

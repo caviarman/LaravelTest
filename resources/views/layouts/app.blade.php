@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    @lang('messages.title')
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,13 +34,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('games.show') }}">Menu<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('games.show') }}">@lang('messages.menu')<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('users.show') }}">Users<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('users.show') }}">@lang('messages.users')<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('log.show') }}">Log<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('log.show') }}">@lang('messages.log')<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
 

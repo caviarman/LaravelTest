@@ -6,20 +6,20 @@
         <form method="POST" id="game" action="{{ route('log.store') }}">
             @csrf
             <div class="form-group">
-                <label for="timer">Timer</label>
+                <label for="timer">@lang('messages.timer')</label>
                 <p class="form-control" name="timer" id="timer" readonly>30</p>
             </div>
             <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" name="description" class="form-control" id="description" value="{{ $game->description }}" readonly>
+                <label for="description">@lang('messages.description')</label>
+                <input type="text" name="description" class="form-control" id="description" value="{{ __($game->description) }}" readonly>
             </div>
             <div class="form-group">
-                <label for="Question">Question</label>
+                <label for="Question">@lang('messages.question')</label>
                 <input type="text" name="question" class="form-control" id="question" value="{{ $game->question }}" readonly>
             </div>
             <div class="form-group">
-                <label for="userAnswer">Your answer</label>
-                <input type="text" name="userAnswer" class="form-control" id="userAnswer" placeholder="type your answer here..." required>
+                <label for="userAnswer">@lang('messages.userAnswer')</label>
+                <input type="text" name="userAnswer" class="form-control" id="userAnswer" placeholder="{{ __('type your answer here...') }}" required>
             </div>
             <div class="form-group">
                 <input type="hidden" name="rightAnswer" class="form-control" id="rightAnswer" value="{{ $game->rightAnswer }}">
@@ -40,8 +40,8 @@
                 
                 @endif
             </div>
-            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-primary" onClick="window.location.reload()">Reset</button>
+            <button type="submit" id="submit" class="btn btn-primary">@lang('messages.submit')</button>
+            <button type="button" class="btn btn-primary" onClick="window.location.reload()">@lang('messages.reset')</button>
         </form>
     </div>
     <br>
@@ -50,11 +50,11 @@
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">Question</th>
-                <th scope="col">Your answer</th>
-                <th scope="col">Right answer</th>
-                <th scope="col">Points</th>
-                <th scope="col">Created</th>
+                <th scope="col">@lang('messages.question')</th>
+                <th scope="col">@lang('messages.userAnswer')</th>
+                <th scope="col">@lang('messages.rightAnswer')</th>
+                <th scope="col">@lang('messages.points')</th>
+                <th scope="col">@lang('messages.date')</th>
                 </tr>
             </thead>
             <tbody>

@@ -34,7 +34,7 @@ class Balance
     }
     public function getData()
     {
-        $question = rand(100, 10000);
+        $question = rand(100, 1000);
         $answer = $this->getBalancedNum($question);
         return [
             'question' => $question,
