@@ -2,8 +2,8 @@
     "What is the result of the expression?": "Вычисли математическое выражение",
     "What number is missing in this progression?": "Вычисли пропущенное число прогрессии",
     "Balance the given number. (for ex.: number 489 is equal to balanced number 777)": "Сбалансируй число (например: числу 489 соответствует сбалансированное чило 777)",
-    "Answer \"yes\" if the number is even, otherwise answer \"no\".": "Ответь \"yes\", если число чётное. В противном случае ответь \"no\"",
+    "Answer \"yes\" if the number is even, otherwise answer \"no\"": "Ответь \"yes\", если число чётное. В противном случае ответь \"no\"",
     "Find the greatest common divisor of given numbers.": "Найди наибольший общий делитель двух чисел",
-    "Answer \"yes\" if given number is prime. Otherwise answer \"no\".": "Ответь \"yes\", если число простое. В противном случае ответь \"no\"",
+    "Answer \"yes\" if given number is prime. Otherwise answer \"no\"": "Ответь \"yes\", если число простое. В противном случае ответь \"no\"",
     "type your answer here...": "напишите ваш ответ здесь..."
 }
