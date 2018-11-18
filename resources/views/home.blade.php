@@ -20,4 +20,10 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <p>
+        <a class="btn btn-secondary" href="/home/ru" role="button">Русская версия</a>
+        <a class="btn btn-secondary" href="/home/en" role="button">Aнглийская версия</a>
+    </p>
+</div>
 @endsection

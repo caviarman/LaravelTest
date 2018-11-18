@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/home/{locale}', function ($locale) {
+    App::setLocale($locale);
+    return redirect()->route('games.show');
+});
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/games', 'GameController@index')->name('games.show');
 Route::get('/games/new', 'GameController@create')->name('games.new');
