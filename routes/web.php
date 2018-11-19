@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home/{locale}', function ($locale) {
     App::setLocale($locale);
-    return redirect()->route('games.show');
+    return view('welcome');
 });
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/games', 'GameController@index')->name('games.show');
