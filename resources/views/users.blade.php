@@ -4,10 +4,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Name</th>
+      <th scope="col">@lang('messages.userName')</th>
       <th scope="col">Email</th>
-      <th scope="col">Total Played</th>
-      <th scope="col">Total Points</th>
+      <th scope="col">@lang('messages.totalPlayed')</th>
+      <th scope="col">@lang('messages.totalPoints')</th>
     </tr>
   </thead>
   <tbody>

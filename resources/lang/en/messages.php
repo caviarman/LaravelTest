@@ -18,4 +18,7 @@ return [
     'timer' => 'Timer',
     'submit' => 'Submit',
     'reset' => 'Reset',
+    'userName' => 'Name',
+    'totalPlayed' => 'Total Plyed',
+    'totalPoints' => 'Total Games'
 ];
