@@ -18,8 +18,21 @@
                 <input type="text" name="question" class="form-control" id="question" value="{{ $game->question }}" readonly>
             </div>
             <div class="form-group">
-                <label for="userAnswer">@lang('messages.userAnswer')</label>
+                <label for="userAnswer">@lang('messages.userAnswer')
+                @if ($game->name === 'Even' || $game->name === 'Prime')
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="userAnswer" value="yes">Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="userAnswer" value="no">No
+                    </label>
+                </div>
+                @else
                 <input type="text" name="userAnswer" class="form-control" id="userAnswer" placeholder="{{ __('type your answer here...') }}" required>
+                @endif
             </div>
             <div class="form-group">
                 <input type="hidden" name="rightAnswer" class="form-control" id="rightAnswer" value="{{ $game->rightAnswer }}">
