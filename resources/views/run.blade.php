@@ -22,12 +22,12 @@
                 @if ($game->name === 'Even' || $game->name === 'Prime')
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="userAnswer" value="yes">Yes
+                        <input type="checkbox" class="form-check-input" id="userAnswer" name="userAnswer" value="yes">Yes
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="userAnswer" value="no">No
+                        <input type="checkbox" class="form-check-input" id="userAnswer" name="userAnswer" value="no">No
                     </label>
                 </div>
                 @else
