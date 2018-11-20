@@ -52,7 +52,7 @@ class GameController extends Controller
             $run = new \Resources\Prime();
             break;
         default:
-            break;                  
+            break;
         }
     
         [
@@ -60,6 +60,12 @@ class GameController extends Controller
             'answer' => $game->rightAnswer,
         ] = $run->getData();
         
+        if ($game->name === 'Gcd' && $game->rightAnswer === '1') {
+            return redirect()->route('game.run', ['id' => $game->id]);
+        }
+
+
+
         return view(
             'run',
             [

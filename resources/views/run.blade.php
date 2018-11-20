@@ -50,7 +50,6 @@
                     <div class="alert alert-danger" role="alert">
                         <strong>{{ session()->get('error') }}</strong>
                     </div>
-                
                 @endif
             </div>
             <button type="submit" id="submit" class="btn btn-primary">@lang('messages.submit')</button>
