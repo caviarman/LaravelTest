@@ -61,7 +61,7 @@ class GameController extends Controller
         ] = $run->getData();
         
         if ($game->name === 'Gcd' && $game->rightAnswer === '1') {
-            return redirect()->route('game.run', ['id' => $game->id]);
+            return redirect()->refresh();
         }
 
 
