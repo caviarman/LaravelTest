@@ -32,39 +32,14 @@ class GameController extends Controller
     public function run($id)
     {
         $game = Game::find($id);
-        switch ($game->name) {
-        case 'Even':
-            $run = new \Resources\Even();
-            break;
-        case 'Progression':
-            $run = new \Resources\Progression();
-            break;
-        case 'Calc':
-            $run = new \Resources\Calc();
-            break;
-        case 'Balance':
-            $run = new \Resources\Balance();
-            break;
-        case 'Gcd':
-            $run = new \Resources\Gcd();
-            break;
-        case 'Prime':
-            $run = new \Resources\Prime();
-            break;
-        default:
-            break;
-        }
-    
         [
             'question' => $game->question,
             'answer' => $game->rightAnswer,
-        ] = $run->getData();
+        ] = $game->getGameInstance()->getData();
         
         if ($game->name === 'Gcd' && $game->rightAnswer === '1') {
             return redirect()->refresh();
         }
-
-
 
         return view(
             'run',
