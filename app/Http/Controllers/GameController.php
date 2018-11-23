@@ -53,4 +53,8 @@ class GameController extends Controller
             ]
         );
     }
+    public function logs($id)
+    {
+        return Game::find($id)->logs()->get();
+    }
 }

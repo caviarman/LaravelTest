@@ -23,6 +23,7 @@ Route::get('/home/{locale}', function ($locale) {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/games', 'GameController@index')->name('games.show');
+Route::get('/games/{id}', 'GameController@logs')->name('games.logs');
 Route::get('/games/new', 'GameController@create')->name('games.new');
 Route::post('/games', 'GameController@store')->name('games.store');
 Route::get('/games/{id}/run', 'GameController@run')->name('game.run');

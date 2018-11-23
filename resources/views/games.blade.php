@@ -15,7 +15,7 @@
         @foreach ($games as $game)
             <tr>
                 <th scope="row">{{ $game->id }}</th>
-                <td>{{ $game->name }}</td>
+                <td><a href="{{ route('games.logs', ['id' => $game->id]) }}">{{ $game->name }}</a></td>
                 <td>{{ __($game->description) }}</td>
                 <td><a class="btn btn-secondary" href="{{ route('game.run', ['id' => $game->id]) }}" role="button">@lang('messages.start')</a></td>
             </tr>
