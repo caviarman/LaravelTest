@@ -28,4 +28,8 @@ class Game extends Model
                 break;
         };
     }
+    public function logs()
+    {
+        return $this->hasMany(Log::class, 'gameId');
+    }
 }

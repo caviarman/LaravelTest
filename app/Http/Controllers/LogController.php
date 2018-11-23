@@ -22,12 +22,12 @@ class LogController extends Controller
         $logs = DB::table('games')
             ->join('logs', 'games.id', '=', 'logs.gameId')
             ->select(
-                'logs.id', 
-                'games.name', 
-                'logs.question', 
-                'logs.userAnswer', 
-                'logs.rightAnswer', 
-                'logs.points', 
+                'logs.id',
+                'games.name',
+                'logs.question',
+                'logs.userAnswer',
+                'logs.rightAnswer',
+                'logs.points',
                 'logs.created_at'
             )
             ->where('userId', '=', auth()->user()->id)
